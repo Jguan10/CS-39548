@@ -1,0 +1,166 @@
+/*
+  You shouldn't need to change these properties for the assignment wrapped and red/green/blue color divs!
+*/
+#assignments-wrapper {
+  padding: 1.5rem;
+}
+
+div {
+  height: 40px;
+}
+
+.assignment {
+  min-height: 40px;
+  margin-bottom: 0.5rem;
+  background: black;
+  display: flex;
+}
+
+.red {
+  background: #dc3220;
+}
+
+.green {
+  background: #1aff1a;
+}
+
+.blue {
+  background: #1a85ff;
+}
+
+.stick {
+  width: 10px;
+  height: 40px;
+}
+
+.box {
+  width: 5%;
+  height: 40px;
+}
+
+.tiny {
+  height: 10px;
+  width: 10px;
+}
+
+.long {
+  height: 10px;
+  width: 100%;
+}
+
+/*
+Example 1 & 2 CSS
+*/
+
+#example1 {
+  justify-content: space-between;
+}
+
+#example2 {
+  justify-content: center;
+  align-items: center;
+}
+
+#example2 > .green {
+  height: 10px;
+  width: 100%;
+}
+
+/*
+Hint: Write Row 1 - 10 CSS below
+*/
+
+#row1 {
+  justify-content: space-around;
+}
+
+#row2 {
+  display: block;
+}
+
+#row2 > .red {
+  margin-bottom: 5px;
+  margin-top: 5px;
+}
+
+#row3 {
+  background: #1a85ff;
+  justify-content: center;
+  align-items: center;
+}
+
+#row4 {
+  justify-content: space-between;
+}
+
+#row5 {
+  background: #1aff1a;
+  justify-content: center, space-between;
+  align-items: center;
+}
+
+#row5 > .blue {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#row6 {
+  justify-content: center;
+  align-items: center;
+}
+
+#row6 > .green {
+  display: flex;
+  align-items: center;
+}
+
+#row6 > .green > .red {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 20px;
+}
+
+#row7 {
+  justify-content: space-between;
+}
+
+#row7 > .red {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#row8 {
+  justify-content: right;
+}
+
+#row8 > .red {
+  width: 5%;
+  display: flex;
+  justify-content: space-around;
+}
+
+#row9 {
+  justify-content: space-between;
+}
+
+#row9 > .tiny {
+  width: 5%;
+}
+
+#row10 {
+  display: flex;
+  justify-content: space-between;
+}
+
+.bot {
+  display: flex;
+  align-items: flex-end;
+}
+
+.mid {
+  display: flex;
+  align-items: center;
+}

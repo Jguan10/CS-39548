@@ -1,0 +1,196 @@
+body {
+  margin: 0;
+}
+
+#navbar {
+  height: 84px;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+.header {
+  display: flex;
+  align-items: center;
+}
+.logo {
+  display: flex;
+  width: 12%;
+}
+
+.links {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: #ff7591;
+  width: 10%;
+  margin-right: 10px;
+}
+
+.menu:hover {
+  color: #44cf79;
+}
+.about:hover {
+  color: #44cf79;
+}
+.order:hover {
+  color: #44cf79;
+}
+
+.hamburger-menu {
+  display: none;
+}
+
+#page-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 1200px;
+  width: 100vw;
+  background: black;
+}
+
+.front {
+  display: block;
+}
+
+.hero-img {
+  display: flex;
+  justify-content: center;
+  margin-left: 585px;
+}
+
+.menu-title {
+  display: flex;
+  color: #44cf79;
+  justify-content: center;
+}
+
+.food {
+  display: flex;
+  justify-content: space-between;
+}
+
+.taco-pic {
+  width: 300px;
+  height: 300px;
+  margin: 0 130px;
+}
+
+.taco-text {
+  color: #fff18f;
+  width: 300px;
+
+  font-size: 25px;
+  margin-left: 130px;
+}
+
+.footer {
+  height: 168px;
+  width: 100vw;
+  background: #fff18f;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.tacocat {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.taco {
+  color: #44cf79;
+  font-size: 60px;
+}
+
+.cat {
+  display: flex;
+  color: #ff7591;
+  margin-left: 15px;
+  font-size: 60px;
+}
+
+@media (width <= 767px) {
+  #navbar {
+    display: flex;
+    height: 84px;
+    width: 100 vw;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .header {
+    display: flex;
+    align-items: center;
+    font-size: 10px;
+    width: 33%;
+    height: 20px;
+  }
+
+  .logo {
+    width: 25%;
+    height: 90%;
+    display: flex;
+  }
+
+  .hamburger-menu {
+    width: 15%;
+    height: 90%;
+    display: flex;
+  }
+
+  .links {
+    display: none;
+  }
+
+  #page-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 2100px;
+    width: 100vw;
+    background: black;
+  }
+
+  .front {
+    display: block;
+  }
+
+  .hero-img {
+    display: flex;
+    justify-content: center;
+    width: 60%;
+    margin-left: 20%;
+    margin-bottom: 10%;
+  }
+
+  .menu-title {
+    margin-bottom: 10%;
+  }
+
+  .food {
+    display: block;
+  }
+
+  .taco1 {
+    margin-bottom: 10%;
+  }
+
+  .taco2 {
+    margin-bottom: 10%;
+  }
+
+  .taco3 {
+    margin-bottom: 10%;
+  }
+
+  .taco {
+    font-size: 130%;
+  }
+
+  .cat {
+    font-size: 130%;
+    margin-left: 10px;
+  }
+}
