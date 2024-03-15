@@ -1,9 +1,5 @@
-/*
- * Feel free to modify this file to your liking.
- * */
-
-// POS Data to help you get started, feel free to replace the pricing/naming or not use this altogether.
-const POS_DATA = {
+// Contains all food for inventory
+const INVEN_DATA = {
   foodItems: [
     {
       name: "Fried Chicken",
@@ -45,8 +41,6 @@ const POS_DATA = {
       price: 8.0,
       imageSrc: "./assets/img/food/food12.png",
     },
-  ],
-  drinkItems: [
     {
       name: "Tequila Sunrise",
       price: 7.0,
@@ -75,8 +69,6 @@ const POS_DATA = {
     { name: "Coke", price: 1.75, imageSrc: "./assets/img/drinks/drink6.png" },
     { name: "Pepsi", price: 1.75, imageSrc: "./assets/img/drinks/drink7.png" },
     { name: "Sprite", price: 1.75, imageSrc: "./assets/img/drinks/drink8.png" },
-  ],
-  dessertItems: [
     {
       name: "Cheesecake",
       price: 4.99,
@@ -102,22 +94,20 @@ const POS_DATA = {
 
 window.onload = () => {
   const inventory = document.getElementById("inventory");
+  const receiptList = document.getElementsByClassName("receipt-item-list")[0];
+  const receipt_total = document.getElementById("total-amount-text");
+  let total_price = 0;
 
   // Clear HTML examples
   inventory.removeChild(inventory.children[0]);
-  const receipt = document.getElementById("receipt");
-  receipt.removeChild(receipt.children[0]);
+  receiptList.removeChild(receiptList.children[0]);
 
-  // Render food items
-  for (let i = 0; i < 12; i++) {
-    const sampleFoodData = POS_DATA.foodItems[i];
+  // Render menu items
+  for (let i = 0; i < 24; i++) {
+    const sampleFoodData = INVEN_DATA.foodItems[i];
 
     const sampleFoodMenuItem = document.createElement("div");
     sampleFoodMenuItem.className = "menu-item";
-
-    sampleFoodMenuItem.addEventListener("click", () => {
-      alert("Clicked this food!");
-    });
 
     const sampleFoodImage = document.createElement("img");
     sampleFoodImage.className = "item-image";
@@ -131,74 +121,36 @@ window.onload = () => {
     sampleFoodPrice.className = "item-price";
     sampleFoodPrice.innerText = "$" + sampleFoodData.price;
 
+    // Adding item functionality
+    sampleFoodMenuItem.addEventListener("click", () => {
+      // Format item for receipt list
+      const receiptItem = document.createElement("div");
+      receiptItem.className = "receipt-item";
+      receiptItem.innerText =
+        sampleFoodData.name + " - " + sampleFoodPrice.innerText;
+
+      // Add button to receipt list
+      const button = document.createElement("button");
+      button.textContent = "x";
+
+      //Button functionality
+      button.addEventListener("click", () => {
+        receiptItem.remove();
+        total_price -= sampleFoodData.price;
+        receipt_total.innerText = "Total: $" + total_price;
+      });
+      receiptItem.appendChild(button);
+      receiptList.appendChild(receiptItem);
+
+      // Add price to total
+      total_price += sampleFoodData.price;
+      receipt_total.innerText = "Total: $" + total_price;
+    });
+
     sampleFoodMenuItem.appendChild(sampleFoodImage);
     sampleFoodMenuItem.appendChild(sampleFoodName);
     sampleFoodMenuItem.appendChild(sampleFoodPrice);
 
     inventory.appendChild(sampleFoodMenuItem);
-  }
-
-  // Render drink items
-  for (let i = 0; i < 8; i++) {
-    const sampleDrinkData = POS_DATA.drinkItems[i];
-
-    const sampleDrinkMenuItem = document.createElement("div");
-    sampleDrinkMenuItem.className = "menu-item";
-
-    // This example also includes adding a click handler for the item.
-    // Though, this is not the ONLY way to do so.
-    sampleDrinkMenuItem.addEventListener("click", () => {
-      alert("Clicked this drink!");
-    });
-
-    const sampleDrinkImage = document.createElement("img");
-    sampleDrinkImage.className = "item-image";
-    sampleDrinkImage.src = sampleDrinkData.imageSrc;
-
-    const sampleDrinkName = document.createElement("div");
-    sampleDrinkName.className = "item-name";
-    sampleDrinkName.innerText = sampleDrinkData.name;
-
-    const sampleDrinkPrice = document.createElement("div");
-    sampleDrinkPrice.className = "item-price";
-    sampleDrinkPrice.innerText = "$" + sampleDrinkData.price;
-
-    sampleDrinkMenuItem.appendChild(sampleDrinkImage);
-    sampleDrinkMenuItem.appendChild(sampleDrinkName);
-    sampleDrinkMenuItem.appendChild(sampleDrinkPrice);
-
-    inventory.appendChild(sampleDrinkMenuItem);
-  }
-
-  // Render dessert items
-  for (let i = 0; i < 4; i++) {
-    const sampleDessertData = POS_DATA.dessertItems[i];
-
-    const sampleDessertMenuItem = document.createElement("div");
-    sampleDessertMenuItem.className = "menu-item";
-
-    // This example also includes adding a click handler for the item.
-    // Though, this is not the ONLY way to do so.
-    sampleDessertMenuItem.addEventListener("click", () => {
-      alert("Clicked this dessert!");
-    });
-
-    const sampleDessertImage = document.createElement("img");
-    sampleDessertImage.className = "item-image";
-    sampleDessertImage.src = sampleDessertData.imageSrc;
-
-    const sampleDessertName = document.createElement("div");
-    sampleDessertName.className = "item-name";
-    sampleDessertName.innerText = sampleDessertData.name;
-
-    const sampleDessertPrice = document.createElement("div");
-    sampleDessertPrice.className = "item-price";
-    sampleDessertPrice.innerText = "$" + sampleDessertData.price;
-
-    sampleDessertMenuItem.appendChild(sampleDessertImage);
-    sampleDessertMenuItem.appendChild(sampleDessertName);
-    sampleDessertMenuItem.appendChild(sampleDessertPrice);
-
-    inventory.appendChild(sampleDessertMenuItem);
   }
 };
