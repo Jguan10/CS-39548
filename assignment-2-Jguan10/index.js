@@ -137,6 +137,7 @@ window.onload = () => {
       button.addEventListener("click", () => {
         receiptItem.remove();
         total_price -= sampleFoodData.price;
+        total_price = Math.round(total_price * 100) / 100;
         receipt_total.innerText = "Total: $" + total_price;
       });
       receiptItem.appendChild(button);
@@ -144,6 +145,7 @@ window.onload = () => {
 
       // Add price to total
       total_price += sampleFoodData.price;
+      total_price = Math.round(total_price * 100) / 100;
       receipt_total.innerText = "Total: $" + total_price;
     });
 
