@@ -1,0 +1,51 @@
+body {
+  margin: 0;
+}
+
+/* Nav Bar*/
+#nav-bar {
+  height: 10vh;
+  background: black;
+  color: white;
+  display: flex;
+  justify-content: space-between;
+}
+
+#nav-bar > div {
+  width: 25vw;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+}
+
+#random-nav > div, #page-nav > div {
+  cursor: pointer;
+}
+
+#random-nav > div:hover, #page-nav > div:hover {
+  color: lime;
+}
+
+/* Main Menu */
+#menu {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  margin: 1rem;
+}
+
+.menu-item {
+  margin: 1rem;
+  cursor: pointer;
+  text-align: center;
+  width: 250px;
+}
+
+.menu-item:hover {
+  border: 1px solid black;
+}
+
+.menu-item > img {
+  width: 100%;
+  margin-bottom: 1rem;
+}
