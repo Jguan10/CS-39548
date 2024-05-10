@@ -10,7 +10,6 @@ const NavBar = () => {
     fetch("https://www.themealdb.com/api/json/v1/1/random.php")
       .then((res) => res.json())
       .then((data) => {
-        // Hint: Add me to the cart!
         const newRandomFoodItem = {
           name: data.meals[0].strMeal,
           imageSrc: data.meals[0].strMealThumb,
@@ -24,7 +23,6 @@ const NavBar = () => {
     fetch("https://www.thecocktaildb.com/api/json/v1/1/random.php")
       .then((res) => res.json())
       .then((data) => {
-        // Hint: Add me to the cart!
         const newRandomDrinkItem = {
           name: data.drinks[0].strDrink,
           imageSrc: data.drinks[0].strDrinkThumb,
