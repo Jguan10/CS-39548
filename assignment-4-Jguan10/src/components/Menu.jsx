@@ -4,7 +4,6 @@ import { useDispatch } from "react-redux";
 import NavBar from "./NavBar";
 
 const Menu = () => {
-  // Hint: Add an onClick handler to add each item to the cart
 
   const dispatch = useDispatch();
 
